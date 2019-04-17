@@ -13,10 +13,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.send("Ha Ha I am here and up");
-});
-
 app.post("/msg", (req, res) => {
   console.log(req.body);
   res.send("I have recieved you message " + req.body);
