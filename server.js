@@ -24,5 +24,8 @@ if (isProduction) {
   app.get("*", (req, res) => {
     res.sendfile("/react-app/build/index.html");
   });
+  app.get("/", (req, res) => {
+    res.sendfile("/react-app/build/index.html");
+  });
 }
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
