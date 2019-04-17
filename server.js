@@ -17,8 +17,8 @@ app.post("/msg", (req, res) => {
   console.log(req.body);
   res.send("I have recieved you message " + req.body);
 });
-
-const isProduction = process.env.NODE_ENV !== "production";
+console.log(process.env.NODE_ENV);
+const isProduction = process.env.NODE_ENV == "production";
 if (isProduction) {
   app.use(express.static("/react-app/build"));
   app.get("*", (req, res) => {
