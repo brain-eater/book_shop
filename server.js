@@ -15,7 +15,7 @@ let connectionDetails = {
   user: "root",
   password: "tiluck",
   socketPath: "/tmp/mysql.sock",
-  db: DB_NAME
+  database: DB_NAME
 };
 
 if (isProduction) {
@@ -23,7 +23,7 @@ if (isProduction) {
     host: "us-cdbr-iron-east-02.cleardb.net",
     user: "b3dd679fbf3e46",
     password: "a87f5575",
-    db: "heroku_33b24fdaceb1972"
+    database: "heroku_33b24fdaceb1972"
   };
 }
 
