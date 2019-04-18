@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   async handleOnSubmit(text) {
-    let response = await fetch("/msg", {
+    let response = await fetch("/getAuthor", {
       method: "POST",
       body: text
     });
