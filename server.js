@@ -14,14 +14,16 @@ let connectionDetails = {
   host: "localhost",
   user: "root",
   password: "tiluck",
-  socketPath: "/tmp/mysql.sock"
+  socketPath: "/tmp/mysql.sock",
+  db: DB_NAME
 };
 
 if (isProduction) {
   connectionDetails = {
     host: "us-cdbr-iron-east-02.cleardb.net",
     user: "b3dd679fbf3e46",
-    password: "a87f5575"
+    password: "a87f5575",
+    db: "heroku_33b24fdaceb1972"
   };
 }
 
@@ -32,10 +34,10 @@ con.connect(err => {
   console.log("connected to sql server  ");
 });
 
-con.query("use " + DB_NAME, err => {
-  if (err) return console.log("database connection error : " + err);
-  console.log("using " + DB_NAME + " database");
-});
+// con.query("use " + DB_NAME, err => {
+//   if (err) return console.log("database connection error : " + err);
+//   console.log("using " + DB_NAME + " database");
+// });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
