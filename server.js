@@ -61,7 +61,8 @@ app.post("/getAuthor", (req, res) => {
         res.send("Book not found ");
         return;
       }
-      res.send(rows[0].author_fname + " " + row[0].author_lname);
+      console.log(rows);
+      res.send(rows[0].author_fname + " " + rows[0].author_lname);
     }
   );
   console.log(query.sql);
